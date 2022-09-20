@@ -82,11 +82,38 @@ const thoughtsController = {
             res.json(dbThoughtsData);
         })
         .catch(err => res.json(err));
-    }
+    },
 
     // POST a new reaction
+    addReaction({ params, body }, res) {
+        Thoughts.findByIdAndUpdate(
+            { _id: params.id }, 
+            { $push: { reactions: body }}, 
+            { new: true, runValidators: true }
+        )
+        .then(dbThoughtsData => {
+
+            if(!dbThoughtsData){
+                res.status(404).json({ message: 'No thought found with this id!' });
+                return;
+            };
+
+            res.json(dbThoughtsData);
+        })
+        .catch(err => res.json(err));
+    },
 
     // DELETE a reaction
+    deleteReaction({ params }, res) {
+        console.log(params)
+        Thoughts.findByIdAndUpdate(
+            { _id: params.id },
+            { $pull: { reactions: { reactionId: params.reactionId } } },
+            { new: true }
+        )
+        .then(dbThoughtsData => res.json(dbThoughtsData))
+        .catch(err => res.json(err));
+    }
 }
 
 module.exports = thoughtsController;
