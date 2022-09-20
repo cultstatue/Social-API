@@ -28,7 +28,7 @@ const UserSchema = new Schema({
     friends: [
         {
             type: String,
-            ref: 'User'
+            ref: 'User',
         }
     ]},
     {
