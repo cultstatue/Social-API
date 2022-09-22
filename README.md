@@ -1,11 +1,33 @@
-# Social-API
+# Social API
+  
 
-GIVEN a social network API
-WHEN I enter the command to invoke the application
-THEN my server is started and the Mongoose models are synced to the MongoDB database
-WHEN I open API GET routes in Insomnia for users and thoughts
-THEN the data for each of these routes is displayed in a formatted JSON
-WHEN I test API POST, PUT, and DELETE routes in Insomnia
-THEN I am able to successfully create, update, and delete users and thoughts in my database
-WHEN I test API POST and DELETE routes in Insomnia
-THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
+  ## Description
+  This is a functional and simple social network API that utilizes MongoDB alongside the Mongoose and Expresss npm packages. Users can be created, deleted, modified adn retrieved, as well as create connections by "friending" each other. Users can be connected to posts called "thoughts" as well as reactions, which function as replies to thoughts. Thoughts can be created, deleted and modfiied, and reactions can be created and deleted. 
+
+  ## Table of Contents
+
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contribution](#contribution)
+  - [Tests](#tests)
+  - [Questions](#questions)
+  
+
+  ## Installation
+  npm install and npm start or npx nodemon to start the server.
+
+  ## Usage
+  This is a functional backend and requires an application like an insomnia to fully test. Refer to the video for a demonstration. 
+        
+  https://ancient-ridge-13260.herokuapp.com/
+
+  ## Contribution
+  N/A
+
+  ## Tests
+  N/A
+
+  ## Questions
+  Reach out on Github via [cultstatue](https://github.com/cultstatue) or by email at saltedchurros@gmail.com.
+  
+

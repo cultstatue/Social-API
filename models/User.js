@@ -1,4 +1,5 @@
 const { Schema, model, Types } = require('mongoose');
+const Thoughts = require('./Thoughts');
 
 const UserSchema = new Schema({
 
@@ -42,6 +43,13 @@ const UserSchema = new Schema({
 
 UserSchema.virtual('friendCount').get(function() {
     return this.friends.length;
+});
+
+UserSchema.post('findOneAndDelete', async function(res, next) {
+
+    await Thoughts.deleteMany({ username: this._id});
+    next();
+
 });
 
 const User = model('User', UserSchema)

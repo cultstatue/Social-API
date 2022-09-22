@@ -1,14 +1,15 @@
-const { User } = require('../models')
+const { User, Thoughts } = require('../models');
+const { db } = require('../models/User');
 
 const userController = {
 
     // get all users
     getAllUsers(req, res) {
         User.find({})
-        // .populate({
-        //     path: 'comments',
-        //     select: '-__v'
-        // })
+        .populate({
+            path: 'thoughts',
+            select: '-__v'
+        })
         .then(dbUserData => res.json(dbUserData))
         .catch(err => {
             console.log(err);
@@ -75,6 +76,7 @@ const userController = {
             };
 
             res.json(dbUserData);
+            
         })
         .catch(err => {
             console.log(err);
