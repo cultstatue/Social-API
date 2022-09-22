@@ -19,7 +19,7 @@
   ## Usage
   This is a functional backend and requires an application like an insomnia to fully test. Refer to the video for a demonstration. 
         
-  https://ancient-ridge-13260.herokuapp.com/
+  https://drive.google.com/file/d/1B1SqPZ9XTq7P7qfZUEy0Inu-Y6ERbOUo/view
 
   ## Contribution
   N/A
